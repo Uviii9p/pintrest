@@ -46,6 +46,25 @@ A modern, Pinterest-inspired visual discovery platform built with Next.js 15, fe
 - **Font**: Google Fonts (Outfit)
 - **APIs**: Reddit JSON, Flickr Public Feed
 
+## 🚀 Deployment
+
+The application is optimized for deployment on **Vercel**, but can be hosted on any platform that supports Next.js.
+
+### Deploy to Vercel (Recommended)
+1. Push your code to a GitHub repository.
+2. Connect your GitHub account to [Vercel](https://vercel.com).
+3. Select this repository and click **Deploy**.
+4. The application will automatically detect Next.js settings and deploy.
+
+### GitHub Upload
+1. Create a new repository on GitHub.
+2. Run the following commands:
+```bash
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git branch -M main
+git push -u origin main
+```
+
 ## 📦 Installation
 
 ```bash
