@@ -1,0 +1,332 @@
+.header {
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, hsl(var(--bg-color)), hsl(var(--surface-50, 0 0% 98%)));
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid hsl(var(--surface-200));
+}
+
+@media (min-width: 768px) {
+    .header {
+        height: 80px;
+        padding: 12px 20px;
+    }
+}
+
+.logoContainer {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .logoContainer {
+        margin-right: 12px;
+    }
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+@media (min-width: 768px) {
+    .logoLink {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.logoLink:hover {
+    background-color: hsl(var(--surface-200));
+}
+
+.logoImg {
+    width: 28px;
+    height: 28px;
+}
+
+.logo {
+    color: hsl(var(--p-600));
+}
+
+.mobileToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: hsl(var(--text-muted));
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.mobileToggle:hover {
+    background-color: hsl(var(--surface-hover));
+    color: hsl(var(--text-main));
+}
+
+.nav {
+    display: none;
+    gap: 4px;
+}
+
+@media (min-width: 768px) {
+    .nav {
+        display: flex;
+        gap: 8px;
+    }
+
+    .mobileToggle {
+        display: none;
+    }
+}
+
+/* Mobile nav open state */
+.navOpen {
+    position: absolute;
+    top: 64px;
+    left: 12px;
+    right: 12px;
+    background: hsl(var(--bg-color));
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: var(--sh-md);
+    z-index: 999;
+}
+
+.navItem {
+    padding: 10px 14px;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 24px;
+    color: hsl(var(--text-main));
+    transition: background-color 0.2s;
+}
+
+.navItem:hover {
+    background-color: hsl(var(--surface-200));
+}
+
+.active {
+    background-color: hsl(var(--text-main));
+    color: hsl(var(--bg-color));
+}
+
+.active:hover {
+    background-color: hsl(var(--text-main));
+}
+
+.searchContainer {
+    flex: 1;
+    margin: 0 8px;
+    max-width: 600px;
+}
+
+@media (max-width: 640px) {
+    .searchContainer {
+        max-width: none;
+    }
+}
+
+.searchWrapper {
+    height: 40px;
+    background-color: hsl(var(--surface-200));
+    border-radius: var(--r-full);
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 10px;
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+}
+
+@media (min-width: 768px) {
+    .searchWrapper {
+        height: 48px;
+        padding: 0 16px;
+        gap: 12px;
+    }
+}
+
+.searchWrapper:focus-within {
+    background-color: hsl(var(--bg-color));
+    border-color: hsl(var(--surface-300));
+    box-shadow: var(--sh-md);
+}
+
+.searchIcon {
+    color: hsl(var(--text-muted));
+    flex-shrink: 0;
+}
+
+.searchInput {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: hsl(var(--text-main));
+    font-weight: 400;
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .searchInput {
+        font-size: 16px;
+    }
+}
+
+.searchInput::placeholder {
+    color: hsl(var(--text-muted));
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+@media (min-width: 768px) {
+    .actions {
+        gap: 8px;
+    }
+}
+
+.iconButton,
+.iconButtonSmall {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--r-full);
+    color: hsl(var(--text-muted));
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .iconButton {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.iconButton:hover,
+.iconButtonSmall:hover {
+    background-color: hsl(var(--surface-hover));
+    color: hsl(var(--text-main));
+    /* Keep original color change on hover */
+}
+
+.loginButton,
+.logoutButton {
+    background-color: hsl(var(--primary));
+    color: white;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.2s;
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
+.loginButton:hover {
+    background-color: #ad081b;
+}
+
+.logoutButton {
+    background-color: hsl(var(--surface-300));
+    color: hsl(var(--text-main));
+}
+
+.logoutButton:hover {
+    background-color: hsl(var(--surface-hover));
+}
+
+.profileLink {
+    text-decoration: none;
+    color: inherit;
+    margin-right: 4px;
+}
+
+/* Hide some buttons on mobile */
+@media (max-width: 640px) {
+    .iconButtonSmall {
+        display: none;
+    }
+}
+
+.badge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: hsl(var(--p-600));
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    min-width: 16px;
+    height: 16px;
+    border-radius: var(--r-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid hsl(var(--bg-color));
+}
+
+@media (min-width: 768px) {
+    .badge {
+        top: 8px;
+        right: 8px;
+    }
+}
+
+.profileButton {
+    padding: 4px;
+    border-radius: var(--r-full);
+    transition: background-color var(--transition-fast);
+}
+
+.profileButton:hover {
+    background-color: hsl(var(--surface-200));
+}
+
+.avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 12px;
+    background: linear-gradient(135deg, hsl(var(--p-600)), hsl(var(--p-500)));
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+}
