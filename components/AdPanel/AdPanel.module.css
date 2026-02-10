@@ -1,0 +1,53 @@
+.container {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    width: 160px;
+    padding: 8px;
+    background: hsla(var(--bg-color), 0.85);
+    backdrop-filter: blur(16px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    border: 1px solid hsla(0, 0%, 100%, 0.15);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 140px;
+        right: 12px;
+        bottom: 12px;
+    }
+}
+
+.adCard {
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.adCard:last-child {
+    margin-bottom: 0;
+}
+
+.adCard:hover {
+    transform: scale(1.02);
+    background: hsla(0, 0%, 100%, 0.1);
+}
+
+.adImage {
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+}
+
+.adText {
+    color: hsl(var(--text-main));
+    font-size: 11px;
+    margin-top: 5px;
+    font-weight: 600;
+    line-height: 1.2;
+}
